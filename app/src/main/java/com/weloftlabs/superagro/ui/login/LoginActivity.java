@@ -54,10 +54,10 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onSuccess(final LoginResult loginResult) {
 
+                SharedPreferenceManager.newInstance(LoginActivity.this).saveValue("userId", loginResult.getAccessToken().getUserId());
                 Intent intent = new Intent(LoginActivity.this, UserDetailsActivity.class);
                 startActivity(intent);
-
-                SharedPreferenceManager.newInstance(LoginActivity.this).saveValue("userId", loginResult.getAccessToken().getUserId());
+                finish();
 
             }
 
@@ -82,7 +82,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 findViewById(R.id.login_bg).setBackgroundDrawable(new BitmapDrawable(getResources(), blurredBitmap));
                 findViewById(R.id.logo).setVisibility(View.VISIBLE);
-                findViewById(R.id.logo1).setVisibility(View.VISIBLE);
 
                 mLoginButton.setVisibility(View.VISIBLE);
             }

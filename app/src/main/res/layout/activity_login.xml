@@ -12,22 +12,12 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
-        android:background="@drawable/cape"
-        android:visibility="gone" />
-
-    <ImageView
-        android:id="@+id/logo1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        android:background="@drawable/b"
+        android:background="@mipmap/ic_launcher"
         android:visibility="gone" />
 
     <com.facebook.login.widget.LoginButton
