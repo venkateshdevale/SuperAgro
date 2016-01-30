@@ -10,13 +10,38 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        multiDexEnabled = true
+        dexOptions {
+            javaMaxHeapSize "4g"
+        }
     }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    signingConfigs {
+        debug {
+            storeFile file("../debug.keystore")
+        }
+        release {
+            storeFile file("../prod.keystore")
+            storePassword 'prod'
+            keyAlias 'prod'
+            keyPassword 'prod'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
 }
 
 dependencies {
@@ -24,4 +49,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
+
+    compile 'com.facebook.android:facebook-android-sdk:4.7.0'
 }
+
+
