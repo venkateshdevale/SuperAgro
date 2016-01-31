@@ -42,7 +42,7 @@ public class PieChartFragment  extends Fragment {
         private PieChartView chart;
         private PieChartData data;
 
-        private boolean hasLabels = false;
+        private boolean hasLabels = true;
         private boolean hasLabelsOutside = false;
         private boolean hasCenterCircle = false;
         private boolean hasCenterText1 = false;
@@ -91,7 +91,7 @@ public class PieChartFragment  extends Fragment {
             prepareDataAnimation();
             chart.startDataAnimation();
 
-
+            //toggleLabels();
 
             generateValues();
             generateData2();
@@ -185,7 +185,7 @@ public class PieChartFragment  extends Fragment {
             hasCenterText1 = true;
             hasCenterText2 = false;
             isExploded = false;
-            hasLabelForSelected = false;
+            hasLabelForSelected = true;
         }
 
         private void generateData() {
@@ -194,21 +194,34 @@ public class PieChartFragment  extends Fragment {
             List<SliceValue> values = new ArrayList<SliceValue>();
             for (int i = 0; i < numValues; ++i) {
                 SliceValue sliceValue = new SliceValue((float) Math.random() * 10 + 15, ChartUtils.pickColor());
-                sliceValue.setLabel("yo");
+
+                if(i==0)
+                    sliceValue.setLabel("Rice");
+                if(i==1)
+                    sliceValue.setLabel("Wheat");
+                if(i==2)
+                    sliceValue.setLabel("Soya");
+                if(i==3)
+                    sliceValue.setLabel("Peanuts");
+                if(i==4)
+                    sliceValue.setLabel("Tobacco");
+                if(i==5)
+                    sliceValue.setLabel("Cotton");
+
                 //sliceValue.set
                 values.add(sliceValue);
             }
 
             data = new PieChartData(values);
-            data.setHasLabels(hasLabels);
+            data.setHasLabels(true);
             //data.set
             data.setHasLabelsOnlyForSelected(hasLabelForSelected);
             data.setHasLabelsOutside(hasLabelsOutside);
             data.setHasCenterCircle(hasCenterCircle);
-            data.setCenterText1("hello");
-            data.setValueLabelBackgroundAuto(true);
-            data.setValueLabelBackgroundEnabled(true);
-            data.setValueLabelBackgroundColor(getActivity().getResources().getColor(android.R.color.black));
+            //data.setCenterText1("hello");
+            //data.setValueLabelBackgroundAuto(true);
+            //data.setValueLabelBackgroundEnabled(true);
+            //data.setValueLabelBackgroundColor(getActivity().getResources().getColor(android.R.color.black));
             data.setValueLabelsTextColor(getActivity().getResources().getColor(android.R.color.white));
 
             if (isExploded) {
@@ -227,15 +240,11 @@ public class PieChartFragment  extends Fragment {
                         (int) getResources().getDimension(R.dimen.pie_chart_text1_size)));
             }
 
-            if (hasCenterText2) {
-                data.setCenterText2("Charts (Roboto Italic)");
 
-                Typeface tf = Typeface.createFromAsset(getActivity().getAssets(), "Roboto-Italic.ttf");
 
-                data.setCenterText2Typeface(tf);
-                data.setCenterText2FontSize(ChartUtils.px2sp(getResources().getDisplayMetrics().scaledDensity,
-                        (int) getResources().getDimension(R.dimen.pie_chart_text2_size)));
-            }
+
+
+
 
             chart.setPieChartData(data);
         }

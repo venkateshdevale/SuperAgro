@@ -43,9 +43,11 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Details"
+            android:text="Crop Details"
+            android:textColor="@android:color/white"
+            android:background="@color/primary"
             android:id="@+id/details_button"
             android:layout_gravity="center_horizontal"/>
     </LinearLayout>
