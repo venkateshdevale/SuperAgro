@@ -1,1 +1,6 @@
 /build
+.idea/libraries/
+.idea/misc.xml
+.idea/workspace.xml
+app/app.iml
+core/core.iml
