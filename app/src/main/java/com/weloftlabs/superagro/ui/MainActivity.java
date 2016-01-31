@@ -21,6 +21,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.weloftlabs.superagro.R;
 import com.weloftlabs.superagro.adapter.ViewPagerAdapter;
 import com.weloftlabs.superagro.ui.fragment.CommonCropsCardListFragment;
+import com.weloftlabs.superagro.ui.fragment.PieChartFragment;
 import com.weloftlabs.superagro.util.GlobalConstant;
 import com.weloftlabs.superagro.util.Pusher;
 
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         GlobalConstant.mContext = MainActivity.this;
         parentLayout = findViewById(R.id.root_view);
-        Pusher.sendPush(this, "ab", "cd");
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -85,12 +86,13 @@ public class MainActivity extends AppCompatActivity {
                         productBasedAnalysisDrawerItem,  //Item 5
                         productionAnalysisDrawerItem, //Item 6
                         stateProductivity,  //Item 7
-                        cropProductivity,  //Item 8
-                        expensesAnalysisDrawerItem, //Item 9
-                        totalOperationExpenses, //Item 10
-                        fertilizerExpenses, //Item 11
-                        chemicalExpenses, //Item 12
-                        laborExpenses //Item 13
+                       cropProductivity
+                        //,  //Item 8
+//                        expensesAnalysisDrawerItem, //Item 9
+//                        totalOperationExpenses, //Item 10
+//                        fertilizerExpenses, //Item 11
+//                        chemicalExpenses, //Item 12
+//                        laborExpenses //Item 13
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -130,6 +132,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+        Fragment pieChartFragment  = new PieChartFragment();
+        adapter.addFragment(pieChartFragment, "Home");
+
         bundle = new Bundle();
         bundle.putString(GlobalConstant.TAG_YEAR, "" + GlobalConstant.getPreviousYear());
         bundle.putString(GlobalConstant.TAG_ANALYSIS_TYPE, "YIELD");
@@ -139,6 +145,11 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragmentYield = new CommonCropsCardListFragment();
         fragmentYield.setArguments(bundle);
         adapter.addFragment(fragmentYield, "Yield");
+
+
+
+
+
 
         bundle = new Bundle();
         bundle.putString(GlobalConstant.TAG_YEAR, "" + GlobalConstant.getPreviousYear());
@@ -159,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragmentAreaPlanned = new CommonCropsCardListFragment();
         fragmentAreaPlanned.setArguments(bundle);
         adapter.addFragment(fragmentAreaPlanned, "AREA PLANTED");
+
 
         /*
         bundle = new Bundle();
@@ -405,9 +417,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupTabIcons() {
-        tabLayout.getTabAt(0).setText("Yield");
-        tabLayout.getTabAt(1).setText("PRICE RECEIVED");
-        tabLayout.getTabAt(2).setText("Area PLANTED");
+        tabLayout.getTabAt(0).setText("Home");
+        tabLayout.getTabAt(1).setText("Yield");
+        tabLayout.getTabAt(2).setText("PRICE RECEIVED");
+        tabLayout.getTabAt(3).setText("Area PLANTED");
     }
 
     @Override
