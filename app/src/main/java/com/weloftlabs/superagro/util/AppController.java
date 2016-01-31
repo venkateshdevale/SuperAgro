@@ -3,6 +3,7 @@ package com.weloftlabs.superagro.util;
 
 
 import android.app.Application;
+import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -20,7 +21,7 @@ import com.parse.ParseUser;
 public class AppController extends Application {
 
     public static final String TAG = AppController.class.getSimpleName();
-
+    public static Context context ;
     private RequestQueue mRequestQueue;
 
     private static AppController mInstance;
@@ -29,7 +30,7 @@ public class AppController extends Application {
     public void onCreate() {
         super.onCreate();
         mInstance = this;
-
+        context = this.getApplicationContext();
         initSDKs();
     }
 

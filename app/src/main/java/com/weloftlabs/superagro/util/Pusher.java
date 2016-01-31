@@ -6,7 +6,6 @@ import android.widget.Toast;
 import com.parse.ParseException;
 import com.parse.ParsePush;
 import com.parse.SendCallback;
-import com.weloftlabs.superagro.manager.SharedPreferenceManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;

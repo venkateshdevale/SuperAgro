@@ -22,4 +22,26 @@
 
     <color name="material_drawer_selected_text">#536EEA</color>
     <color name="material_drawer_dark_selected_text">#536EEA</color>
+    <color name="green_btn_bg_color">#1AD3A2</color>
+    <color name="green_btn_bg_pressed_color">#15A151</color>
+    <color name="primary_green">#1AD3A2</color>
+    <color name="logo_orange">#FF6633</color>
+    <color name="transparent">#00000000</color>
+    <color name="tab_highlight">#1AD3A2</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="list_divider">#d9d9d9</color>
+    <color name="list_row_start_color">#ffffff</color>
+    <color name="list_row_end_color">#ffffff</color>
+    <color name="list_row_hover_start_color">#ebeef0</color>
+    <color name="list_row_hover_end_color">#ebeef0</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#E0E0E0</color>
+    <color name="light_grey">#F2F2F2</color>
+    <color name="translucent">#33000000</color>
+    <color name="black">#000000</color>
+    <color name="dark_grey">#9e9e9e</color>
+    <color name="service_background">#00334d</color>
+    <color name="text_red">#FF6633</color>
+    <color name="pressed">#abb</color>
+    <color name="focused">#00F000</color>
 </resources>

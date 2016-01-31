@@ -10,10 +10,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="year_based_fixed_state_crop_analysis">Year Based Analysis</string>
-
-    <!-- Navigation drawer item -->
-    <string name="nav_item_home">Home - Power Crops</string>
+    <string name="title_activity_crop_details">Crops</string>
     <string name="nav_item_product_based_analysis">Crop Based Analysis</string>
     <string name="nav_item_state_based_analysis">State Based Analysis</string>
     <string name="nav_item_compare_production_analysis">Production Analysis</string>
@@ -39,5 +36,4 @@
     <string name="loading_crop_text">Loading power crops. Please wait...</string>
     <string name="title_activity_app_intro">SuperAgro Intro</string>
     <string name="title_activity_expenses">Expenses Analysis</string>
-
 </resources>

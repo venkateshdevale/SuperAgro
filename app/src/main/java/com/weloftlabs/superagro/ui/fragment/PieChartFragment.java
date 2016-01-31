@@ -310,10 +310,6 @@ public class PieChartFragment  extends Fragment {
             generateData();
         }
 
-        /**
-         * To animate values you have to change targets values and then call {@link Chart#startDataAnimation()}
-         * method(don't confuse with View.animate()).
-         */
         private void prepareDataAnimation() {
             for (SliceValue value : data.getValues()) {
                 value.setTarget((float) Math.random() * 30 + 15);

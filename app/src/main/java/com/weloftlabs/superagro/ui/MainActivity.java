@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -18,12 +19,12 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.weloftlabs.superagro.CropDetailActivity;
 import com.weloftlabs.superagro.R;
 import com.weloftlabs.superagro.adapter.ViewPagerAdapter;
 import com.weloftlabs.superagro.ui.fragment.CommonCropsCardListFragment;
 import com.weloftlabs.superagro.ui.fragment.PieChartFragment;
 import com.weloftlabs.superagro.util.GlobalConstant;
-import com.weloftlabs.superagro.util.Pusher;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private Bundle bundle;
     private View parentLayout;
     private String expenseType;
+    Button detailsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +49,15 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        detailsButton = (Button) findViewById(R.id.details_button);
+        detailsButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(MainActivity.this,CropDetailActivity.class));
+            }
+        });
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setOffscreenPageLimit(5);
         setupViewPager(viewPager);
@@ -56,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
-        PrimaryDrawerItem homeDrawerItem = new PrimaryDrawerItem().withName(R.string.nav_item_home).withIcon(R.drawable.home_icon);
+        PrimaryDrawerItem homeDrawerItem = new PrimaryDrawerItem().withName("Home").withIcon(R.drawable.home_icon);
         PrimaryDrawerItem productBasedAnalysisDrawerItem = new PrimaryDrawerItem().withName(R.string.nav_item_product_based_analysis).withIcon(R.drawable.crop_based_analysis);
         PrimaryDrawerItem stateBasedDrawerItem = new PrimaryDrawerItem().withName(R.string.nav_item_state_based_analysis).withIcon(R.drawable.state_based_analysis);
         PrimaryDrawerItem compareBasedDrawerItem = new PrimaryDrawerItem().withName(R.string.nav_item_compare_crops_analysis).withIcon(R.drawable.compare_drawer);
