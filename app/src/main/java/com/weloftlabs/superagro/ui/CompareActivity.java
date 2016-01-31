@@ -2,7 +2,6 @@ package com.weloftlabs.superagro.ui;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -47,6 +46,7 @@ import lecho.lib.hellocharts.model.AxisValue;
 import lecho.lib.hellocharts.model.Column;
 import lecho.lib.hellocharts.model.ColumnChartData;
 import lecho.lib.hellocharts.model.SubcolumnValue;
+import lecho.lib.hellocharts.util.ChartUtils;
 import lecho.lib.hellocharts.view.ColumnChartView;
 
 public class CompareActivity extends AppCompatActivity {
@@ -158,24 +158,26 @@ public class CompareActivity extends AppCompatActivity {
             List<Column> columns = new ArrayList<Column>();
             List<SubcolumnValue> values;
             int i = 0;
+            float step = 10.0f/(mFirstCompareItemList.size() - 1);
+            float axisValuePos = 0;
             for (Crop crop : mFirstCompareItemList) {
 
                 values = new ArrayList<SubcolumnValue>();
                 String valueFormatted = "" + uniqueFirstCompareValue.get(crop.getYear());
 
-                values.add(new SubcolumnValue(Float.parseFloat(valueFormatted), Color.parseColor("#388E3C")));
+                values.add(new SubcolumnValue(Float.parseFloat(valueFormatted), ChartUtils.pickColor()));
 
                 Column column = new Column(values);
                 column.setHasLabels(false);
                 column.setHasLabelsOnlyForSelected(true);
                 columns.add(column);
-
                 axisValues.add(new AxisValue(i).setLabel(crop.getYear()));
                 i++;
             }
 
             columnDataTop = new ColumnChartData(columns);
             columnDataTop.setAxisXBottom(new Axis(axisValues).setHasLines(true));
+
             columnDataTop.setAxisYLeft(new Axis().setHasLines(true));
 
             chartTop.setColumnChartData(columnDataTop);
@@ -192,7 +194,7 @@ public class CompareActivity extends AppCompatActivity {
                 values = new ArrayList<SubcolumnValue>();
                 String valueFormatted = "" + uniqueSecondCompareValue.get(crop.getYear());
 
-                values.add(new SubcolumnValue(Float.parseFloat(valueFormatted), Color.parseColor("#303F9F")));
+                values.add(new SubcolumnValue(Float.parseFloat(valueFormatted), ChartUtils.pickColor()));
 
                 Column column = new Column(values);
                 column.setHasLabels(false);

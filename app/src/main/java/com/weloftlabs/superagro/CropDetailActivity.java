@@ -4,6 +4,7 @@ import android.database.Observable;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -53,12 +54,15 @@ public class CropDetailActivity extends AppCompatActivity
     @Bind(R.id.combined_chart)
     CombinedChart mCombinedChart;
     private int[] lineChartData;
-
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crop_detail);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitle("Rice Statistics");
         ButterKnife.bind(this);
         //((TextView)findViewById(R.id.crop_name)).setText(getIntent().getStringExtra("DETAILS"));
         initializeRetrofit();

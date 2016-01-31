@@ -149,6 +149,7 @@ public class CommonCropsCardListFragment extends ProgressFragment {
 
                 try {
                     cropsJsonArray = response.getJSONArray("data");
+                    if(this!=null)
                     CommonCropsCardListFragment.this.getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

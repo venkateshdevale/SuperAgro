@@ -5,8 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 
-import com.github.paolorotolo.appintro.AppIntro;
 import com.github.paolorotolo.appintro.AppIntro2;
+import com.weloftlabs.superagro.FarmSelectionActivity;
 import com.weloftlabs.superagro.R;
 import com.weloftlabs.superagro.ui.fragment.AppIntroSlideFragment;
 import com.weloftlabs.superagro.util.GlobalConstant;
@@ -42,7 +42,7 @@ public class AppIntroActivity extends AppIntro2 {
         editor.putString(GlobalConstant.TAG_APP_INTRO, GlobalConstant.TAG_NO);
         editor.commit();
 
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, FarmSelectionActivity.class);
         startActivity(intent);
         finish();
     }

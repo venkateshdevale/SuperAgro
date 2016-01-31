@@ -54,7 +54,7 @@
             android:value="@string/google_maps_key"/>
 
         <activity
-            android:name=".CropListActivity"
+            android:name=".FarmSelectionActivity"
             android:label="@string/title_activity_crop_details">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

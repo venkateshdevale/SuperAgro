@@ -2,7 +2,6 @@ package com.weloftlabs.superagro.ui;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -43,6 +42,7 @@ import lecho.lib.hellocharts.model.AxisValue;
 import lecho.lib.hellocharts.model.Column;
 import lecho.lib.hellocharts.model.ColumnChartData;
 import lecho.lib.hellocharts.model.SubcolumnValue;
+import lecho.lib.hellocharts.util.ChartUtils;
 import lecho.lib.hellocharts.view.ColumnChartView;
 
 public class ExpensesActivity extends AppCompatActivity {
@@ -223,7 +223,7 @@ public class ExpensesActivity extends AppCompatActivity {
                 values = new ArrayList<SubcolumnValue>();
                 String valueFormatted = "" + uniqueMapValue.get(crop.getYear());
 
-                values.add(new SubcolumnValue(Float.parseFloat(valueFormatted), Color.parseColor("#388E3C")));
+                values.add(new SubcolumnValue(Float.parseFloat(valueFormatted), ChartUtils.pickColor()));
 
                 Column column = new Column(values);
                 column.setHasLabels(false);
