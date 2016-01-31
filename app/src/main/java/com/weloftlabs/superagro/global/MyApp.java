@@ -3,6 +3,10 @@ package com.weloftlabs.superagro.global;
 import android.app.Application;
 
 import com.facebook.FacebookSdk;
+import com.parse.Parse;
+import com.parse.ParseACL;
+import com.parse.ParseInstallation;
+import com.parse.ParseUser;
 
 /**
  * Created by ymedia on 3/11/15.
@@ -24,14 +28,6 @@ public class MyApp extends Application {
     private void initSDKs() {
         FacebookSdk.sdkInitialize(getApplicationContext());
 
-        /*try {
-            BMSClient.getInstance().initialize(this, BM_APP_ROUTE, BM_GUID);
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-
-
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, "KzRkMP3NiqCFyf9Wl2xsU2cLOmdj95Fe0UlWyq6O", "phpNeS0sXFlJZepSFq5guQkXlafChHgeEEBQf690");
         ParseInstallation.getCurrentInstallation().saveInBackground();
@@ -39,7 +35,7 @@ public class MyApp extends Application {
         ParseUser.enableAutomaticUser();
         ParseACL defaultACL = new ParseACL();
         defaultACL.setPublicReadAccess(true);
-        ParseACL.setDefaultACL(defaultACL, true);*/
+        ParseACL.setDefaultACL(defaultACL, true);
     }
 
 }

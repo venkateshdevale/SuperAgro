@@ -23,6 +23,7 @@ import com.weloftlabs.superagro.adapter.ViewPagerAdapter;
 import com.weloftlabs.superagro.ui.fragment.CommonCropsCardListFragment;
 import com.weloftlabs.superagro.ui.fragment.PieChartFragment;
 import com.weloftlabs.superagro.util.GlobalConstant;
+import com.weloftlabs.superagro.util.Pusher;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         GlobalConstant.mContext = MainActivity.this;
         parentLayout = findViewById(R.id.root_view);
-
+        Pusher.sendPush(this, "ab", "cd");
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
