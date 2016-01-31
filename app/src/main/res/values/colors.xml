@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="colorAccent">#4CAF50</color>
+
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="tab_indicator">#FFFFFF</color>
+
+
+
+    <color name="primary">#673AB7</color>
+    <color name="primary_dark">#512DA8</color>
+    <color name="primary_light">#BBDEFB</color>
+    <color name="accent">#FFEB3B</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+
+    <color name="material_drawer_selected_text">#536EEA</color>
+    <color name="material_drawer_dark_selected_text">#536EEA</color>
     <color name="green_btn_bg_color">#1AD3A2</color>
     <color name="green_btn_bg_pressed_color">#15A151</color>
     <color name="primary_green">#1AD3A2</color>
@@ -25,5 +44,4 @@
     <color name="text_red">#FF6633</color>
     <color name="pressed">#abb</color>
     <color name="focused">#00F000</color>
-    <color name="accent">#FF4081</color>
 </resources>

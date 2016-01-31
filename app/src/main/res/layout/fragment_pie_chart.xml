@@ -1,0 +1,154 @@
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  android:padding="5dp"
+    >
+
+    <lecho.lib.hellocharts.view.PieChartView
+        android:id="@+id/chart"
+        android:layout_centerHorizontal="true"
+        android:layout_width="200dp"
+        android:layout_height="200dp"></lecho.lib.hellocharts.view.PieChartView>
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/chart"
+        android:layout_height="wrap_content"
+        android:id="@+id/cv"
+        android:layout_margin="10dp"
+        app:cardElevation="10dp"
+        android:elevation="5dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+            <!--
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/crop_image"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="16dp"
+                    />
+            -->
+            <LinearLayout
+                android:id="@+id/thumbnail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dip"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/crop_common"
+                android:layout_marginLeft="25dip">
+
+                <ImageView
+                    android:id="@+id/list_image"
+                    android:layout_width="30dip"
+                    android:layout_height="30dip" />
+
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="150dip"
+                android:layout_marginLeft="100dp"
+                android:layout_height="35dip"
+                android:textSize="25sp"
+                android:text="Top Crops"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/crop_name1"
+                android:textStyle="bold"
+                android:layout_below="@+id/title"
+                android:layout_marginTop="10dp"
+                android:text="Rice  :: 1500$ extra than last year"
+               android:layout_marginLeft="20dp"
+                android:textSize="15sp" />
+
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/crop_name2"-->
+                <!--android:text="Wheat  :: 10% more yield than last year"-->
+                <!--android:layout_below="@+id/crop_name1"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:textSize="15sp"-->
+                 <!--/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/crop_name3"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/crop_name2"-->
+                <!--android:text="Soya  :: 20% more yield than last year"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:textSize="15sp"-->
+                <!--/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/crop_name3"-->
+                <!--android:id="@+id/crop_name4"-->
+                <!--android:text="Peanuts :: more yield expected"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:textSize="15sp"-->
+                <!--/>-->
+
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/crop_name4"-->
+                <!--android:id="@+id/crop_name5"-->
+                <!--android:text="Tobacco :: more profit expected"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:textSize="15sp"-->
+                <!--/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/crop_name5"-->
+                <!--android:id="@+id/crop_name6"-->
+                <!--android:text="Cotton :: more profit expected"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:textSize="15sp"-->
+                <!--/>-->
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <lecho.lib.hellocharts.view.ComboLineColumnChartView android:id="@+id/chart2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"></lecho.lib.hellocharts.view.ComboLineColumnChartView>
+
+
+
+</RelativeLayout>
+
+</ScrollView>

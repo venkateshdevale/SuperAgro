@@ -18,7 +18,7 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.weloftlabs.superagro.CropDetailActivity;
 import com.weloftlabs.superagro.R;
 import com.weloftlabs.superagro.models.CropItem;
-import com.weloftlabs.superagro.utils.MyApplication;
+import com.weloftlabs.superagro.util.AppController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +67,7 @@ public class CropsListAdapter extends RecyclerView.Adapter<CropsListAdapter.Crop
         BarDataSet set = new BarDataSet(yValues, "Profit");
 
 
-        set.setColors(new int[] { MyApplication.context.getResources().getColor(R.color.primary_green), MyApplication.context.getResources().getColor(R.color.transparent)});
+        set.setColors(new int[] { AppController.context.getResources().getColor(R.color.primary_green), AppController.context.getResources().getColor(R.color.transparent)});
         String[] xVals = new String[]{"$",""};
         BarData data = new BarData(xVals, set);
         holder.mChart.setData(data);

@@ -16,6 +16,11 @@ android {
             javaMaxHeapSize "4g"
         }
     }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -23,6 +28,22 @@ android {
         }
 
     }
+
+    signingConfigs {
+        debug {
+            storeFile file("../debug.keystore")
+        }
+        release {
+            storeFile file("../prod.keystore")
+            storePassword 'prod'
+            keyAlias 'prod'
+            keyPassword 'prod'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
 }
 repositories {
     maven { url "https://jitpack.io" }
@@ -30,7 +51,9 @@ repositories {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
+    //testCompile 'junit:junit:4.12'
+
+    compile project(':core')
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
     compile 'com.github.PhilJay:MPAndroidChart:v2.2.0'
@@ -46,4 +69,21 @@ dependencies {
     compile 'com.squareup.okhttp:logging-interceptor:2.6.0'
     compile 'com.google.android.gms:play-services-maps:8.4.0'
 
+    compile 'com.facebook.android:facebook-android-sdk:4.7.0'
+    compile files('libs/volley.jar')
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile('com.mikepenz:materialdrawer:4.3.9@aar') {
+        transitive = true
+    }
+    compile 'com.github.lecho:hellocharts-library:1.5.8@aar'
+    compile 'com.android.support:cardview-v7:23.1.1'
+
+    compile 'com.github.johnkil.android-progressfragment:progressfragment:1.4.+'
+    compile 'com.github.paolorotolo:appintro:3.2.0'
+    compile 'com.melnykov:floatingactionbutton:1.3.0'
+
+    compile 'com.parse.bolts:bolts-android:1.+'
+    compile 'com.parse:parse-android:1.+'
 }
+
+
