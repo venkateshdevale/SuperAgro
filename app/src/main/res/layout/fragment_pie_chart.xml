@@ -140,6 +140,14 @@
     </android.support.v7.widget.CardView>
 
 
+    <lecho.lib.hellocharts.view.ComboLineColumnChartView android:id="@+id/chart2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"></lecho.lib.hellocharts.view.ComboLineColumnChartView>
+
+
 
 </RelativeLayout>
 

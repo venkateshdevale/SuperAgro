@@ -85,12 +85,13 @@ public class MainActivity extends AppCompatActivity {
                         productBasedAnalysisDrawerItem,  //Item 5
                         productionAnalysisDrawerItem, //Item 6
                         stateProductivity,  //Item 7
-                        cropProductivity,  //Item 8
-                        expensesAnalysisDrawerItem, //Item 9
-                        totalOperationExpenses, //Item 10
-                        fertilizerExpenses, //Item 11
-                        chemicalExpenses, //Item 12
-                        laborExpenses //Item 13
+                       cropProductivity
+                        //,  //Item 8
+//                        expensesAnalysisDrawerItem, //Item 9
+//                        totalOperationExpenses, //Item 10
+//                        fertilizerExpenses, //Item 11
+//                        chemicalExpenses, //Item 12
+//                        laborExpenses //Item 13
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
