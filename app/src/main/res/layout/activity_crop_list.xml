@@ -1,0 +1,48 @@
+<RelativeLayout
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <fragment android:id="@+id/map"
+              xmlns:map="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="200dp"
+              tools:context=".CropListActivity"
+              android:name="com.google.android.gms.maps.MapFragment"
+              tools:layout="@android:layout/simple_gallery_item"
+              android:layout_alignParentTop="true"
+              android:layout_alignParentLeft="true"
+              android:layout_alignParentStart="true"/>
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/crops_list_view"
+        android:layout_below="@+id/map">
+
+    </android.support.v7.widget.RecyclerView>
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/loading_layout"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true">
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressBar"
+        android:text="Loading Data..."/>
+</RelativeLayout>
+</RelativeLayout>
